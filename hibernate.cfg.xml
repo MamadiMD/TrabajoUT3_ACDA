@@ -11,9 +11,7 @@
         <mapping class="db.model.Paciente"/>
         <mapping class="db.model.HistorialMedico"/>
         <mapping class="db.model.Doctor"/>
-        <mapping class="db.model.Especialidad"/>
-        <mapping class="db.model.Tratamiento"/>
-        <mapping class="db.model.Medicamento"/>
-        <mapping class="db.model.Prescripcion"/>
+        <mapping class="db.model.Habitacion"/>
+        <mapping class="db.model.Hospital"/>
     </session-factory>
 </hibernate-configuration>
