@@ -1,0 +1,19 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3308/acda_ut3</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <mapping class="db.model.Paciente"/>
+        <mapping class="db.model.HistorialMedico"/>
+        <mapping class="db.model.Doctor"/>
+        <mapping class="db.model.Especialidad"/>
+        <mapping class="db.model.Tratamiento"/>
+        <mapping class="db.model.Medicamento"/>
+        <mapping class="db.model.Prescripcion"/>
+    </session-factory>
+</hibernate-configuration>
