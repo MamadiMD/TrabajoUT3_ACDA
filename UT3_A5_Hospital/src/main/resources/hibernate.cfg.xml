@@ -9,18 +9,8 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <mapping class="db.model.Habitacion"/>
-<<<<<<< Updated upstream
         <mapping class="db.model.HistorialMedico"/>
         <mapping class="db.model.LicenciaProfesional"/>
-=======
-<<<<<<< HEAD
         <mapping class="db.model.Hospital"/>
-        <mapping class="db.model."/>
-=======
-        <mapping class="db.model.HistorialMedico"/>
-        <mapping class="db.model.LicenciaProfesional"/>
->>>>>>> 199958f40cbcdf0caa19af2ba9fe277c71068db0
->>>>>>> Stashed changes
-        <mapping class="db.model."/>
     </session-factory>
 </hibernate-configuration>
