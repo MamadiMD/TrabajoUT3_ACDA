@@ -9,8 +9,8 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <mapping class="db.model.Habitacion"/>
-        <mapping class="db.model."/>
-        <mapping class="db.model."/>
+        <mapping class="db.model.HistorialMedico"/>
+        <mapping class="db.model.LicenciaProfesional"/>
         <mapping class="db.model."/>
     </session-factory>
 </hibernate-configuration>
