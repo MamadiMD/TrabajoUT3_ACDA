@@ -52,9 +52,9 @@ CREATE TABLE Paciente (
 );
 
 -- ==============================
--- TABLA: LicenciaProvisional
+-- TABLA: LicenciaProfesional
 -- ==============================
-CREATE TABLE LicenciaProvisional (
+CREATE TABLE LicenciaProfesional (
     licenciaProvisionalID INT AUTO_INCREMENT PRIMARY KEY,
     numero_licencia VARCHAR(50) NOT NULL,
     organismo VARCHAR(100),

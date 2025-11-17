@@ -2,6 +2,8 @@ package db.model;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "LicenciaProfesional")
 public class LicenciaProfesional {
@@ -10,12 +12,18 @@ public class LicenciaProfesional {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int licenciaID;
-    @Column (name = "enVigencia", nullable = false)
-    private boolean enVigencia;
+    @Column (name = "fechaEmision", nullable = true)
+    private Date fechaEmision;
+    @Column (name = "fechaExpiracion", nullable = true)
+    private Date fechaExpiracion;
+    @Column(name = "organismo", nullable = false)
+    private String organismo;
 
-    public LicenciaProfesional(int licenciaID, boolean enVigencia) {
+    public LicenciaProfesional(int licenciaID, Date fechaEmision,Date fechaExpiracion, String organismo) {
         this.licenciaID = licenciaID;
-        this.enVigencia = enVigencia;
+        this.fechaEmision = fechaEmision;
+        this.fechaExpiracion=fechaExpiracion;
+        this.organismo=organismo;
     }
 
     public int getLicenciaID() {
@@ -26,19 +34,37 @@ public class LicenciaProfesional {
         this.licenciaID = licenciaID;
     }
 
-    public boolean isEnVigencia() {
-        return enVigencia;
+    public Date getFechaEmision() {
+        return fechaEmision;
     }
 
-    public void setEnVigencia(boolean enVigencia) {
-        this.enVigencia = enVigencia;
+    public void setFechaEmision(Date enVigencia) {
+        this.fechaEmision = enVigencia;
+    }
+
+    public Date getFechaExpiracion() {
+        return fechaExpiracion;
+    }
+
+    public void setFechaExpiracion(Date fechaExpiracion) {
+        this.fechaExpiracion = fechaExpiracion;
+    }
+
+    public String getOrganismo() {
+        return organismo;
+    }
+
+    public void setOrganismo(String organismo) {
+        this.organismo = organismo;
     }
 
     @Override
     public String toString() {
         return "LicenciaProfesional{" +
                 "licenciaID=" + licenciaID +
-                ", enVigencia=" + enVigencia +
+                ", fechaEmision=" + fechaEmision +
+                ", fechaExpiracion=" + fechaExpiracion +
+                ", organismo='" + organismo + '\'' +
                 '}';
     }
 }
