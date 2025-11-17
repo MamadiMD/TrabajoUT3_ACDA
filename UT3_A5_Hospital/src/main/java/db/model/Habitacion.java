@@ -16,11 +16,11 @@ public class Habitacion {
     @Column(name = "Disponible", nullable = false)
     private boolean disponible;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pacienteID ", nullable = false)
     private Paciente paciente;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hospitalID", nullable = false)
     private Hospital hospital;
 

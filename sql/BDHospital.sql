@@ -55,7 +55,7 @@ CREATE TABLE Paciente (
 -- TABLA: LicenciaProfesional
 -- ==============================
 CREATE TABLE LicenciaProfesional (
-    licenciaProvisionalID INT AUTO_INCREMENT PRIMARY KEY,
+    licenciaProfesionalID INT AUTO_INCREMENT PRIMARY KEY,
     numero_licencia VARCHAR(50) NOT NULL,
     organismo VARCHAR(100),
     fecha_emision DATE,
@@ -70,10 +70,10 @@ CREATE TABLE Doctor (
     doctorID INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     hospitalID INT NOT NULL,
-    licenciaProvisionalID INT UNIQUE, 
+    licenciaProfesionalID INT UNIQUE, 
     FOREIGN KEY (hospitalID) REFERENCES Hospital(hospitalID)
         ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (licenciaProvisionalID) REFERENCES LicenciaProvisional(licenciaProvisionalID)
+    FOREIGN KEY (licenciaProfesionalID) REFERENCES LicenciaProfesional(licenciaProfesionalID)
         ON DELETE SET NULL ON UPDATE CASCADE
 );
 

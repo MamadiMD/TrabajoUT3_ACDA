@@ -6,6 +6,7 @@ import db.model.Doctor;
 import db.model.Habitacion;
 import db.model.Hospital;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class HospitalService extends GenericServiceImpl<Hospital,Integer>{

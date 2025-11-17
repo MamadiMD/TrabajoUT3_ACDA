@@ -12,11 +12,11 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hospitalID;
 
-//    @OneToMany(mappedBy = "hospital" , cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    List<Habitacion> habitaciones = new ArrayList<>();
-//
-//    @OneToMany(mappedBy = "Doctor", cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
-//    List<Doctor>doctores = new ArrayList<>();
+    @OneToMany(mappedBy = "hospital" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    List<Habitacion> habitaciones = new ArrayList<>();
+
+    @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
+    List<Doctor> doctores = new ArrayList<>();
 
     @Column(name = "Nombre", nullable = false, length = 500, unique = true)
     private String nombre;
@@ -37,21 +37,21 @@ public class Hospital {
         this.hospitalID = hospitalID;
     }
 
-//    public List<Habitacion> getHabitaciones() {
-//        return habitaciones;
-//    }
-//
-//    public void setHabitaciones(List<Habitacion> habitaciones) {
-//        this.habitaciones = habitaciones;
-//    }
-//
-//    public List<Doctor> getDoctores() {
-//        return doctores;
-//    }
-//
-//    public void setDoctores(List<Doctor> doctores) {
-//        this.doctores = doctores;
-//    }
+    public List<Habitacion> getHabitaciones() {
+        return habitaciones;
+    }
+
+    public void setHabitaciones(List<Habitacion> habitaciones) {
+        this.habitaciones = habitaciones;
+    }
+
+    public List<Doctor> getDoctores() {
+        return doctores;
+    }
+
+    public void setDoctores(List<Doctor> doctores) {
+        this.doctores = doctores;
+    }
 
     public String getNombre() {
         return nombre;

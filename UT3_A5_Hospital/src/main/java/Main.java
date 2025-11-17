@@ -84,29 +84,31 @@ public class Main {
         historialMedicoList1.forEach(System.out::println);
 
         Habitacion habitacion1 = new Habitacion();
-        habitacion1.setNumero(120);
+        habitacion1.setNumero(119);
         habitacion1.setDisponible(true);
         habitacion1.setHospital(hospital);
         habitacion1.setPaciente(paciente1);
+
 
         System.out.println("Habitación ANTES de create:\n" + habitacion1);
         habitacionService.create(habitacion1);
         System.out.println("Habitación DESPUÉS de create:\n" + habitacion1);
 
         Habitacion habitacion4 = new Habitacion();
-        habitacion4.setNumero(120);
+        habitacion4.setNumero(121);
         habitacion4.setDisponible(false);
         habitacion4.setHospital(hospital);
         habitacion4.setPaciente(paciente2);
         habitacionService.create(habitacion4);
 
-//        List<Habitacion> habitacionList = habitacionService.findAll();
-//        System.out.println("TODAS LAS HABITACIONES: ");
-//        habitacionList.forEach(System.out::println);
-//
-//        List<Habitacion> habitacionList1 = habitacionService.findHabitacionesDisponibles();
-//        System.out.println("TODAS LAS HABITACIONES DISPONIBLES: ");
-//        habitacionList1.forEach(System.out::println);
+        List<Habitacion> habitacionList = habitacionService.findAll();
+        System.out.println("TODAS LAS HABITACIONES: ");
+        habitacionList.forEach(System.out::println);
+
+        List<Habitacion> habitacionList1 = habitacionService.findHabitacionesDisponibles();
+        System.out.println("TODAS LAS HABITACIONES DISPONIBLES: ");
+        habitacionList1.forEach(System.out::println);
+
 
         hospitalService.obtenerDoctoresHospital(hospital.getHospitalID());
         hospitalService.obtenerHabitacionesHospital(hospital.getHospitalID());

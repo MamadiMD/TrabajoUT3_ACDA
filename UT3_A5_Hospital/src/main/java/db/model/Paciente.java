@@ -17,7 +17,7 @@ public class Paciente {
     @Column(name = "apellido", nullable = false)
     private String apellido;
 
-    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.EAGER)
     private List<Atiende> atiende = new ArrayList<>();
 
 

@@ -7,6 +7,7 @@ import db.model.Hospital;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class HospitalDAO extends GenericDAOImpl<Hospital,Integer>{
@@ -33,14 +34,14 @@ public class HospitalDAO extends GenericDAOImpl<Hospital,Integer>{
 
     public List<Habitacion> getHabitacionesPorHospital(int hospitalID){
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.createQuery("FROM Habitacion c WHERE c.habitacion.id = :hospitalID",
+            return session.createQuery("FROM Habitacion c WHERE c.habitacionID = :hospitalID",
                     Habitacion.class).setParameter("hospitalID",hospitalID).list();
         }
     }
 
     public List<Doctor> getDoctoresPorHospital(int hospitalID){
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.createQuery("FROM Doctor WHERE hospitalID = hospitalID",
+            return session.createQuery("FROM Doctor d WHERE d.hospital.id = :hospitalID",
                     Doctor.class).setParameter("hospitalID",hospitalID).list();
         }
     }
