@@ -1,12 +1,27 @@
+<<<<<<< HEAD
+import db.model.Atiende;
+import db.model.Doctor;
+import db.model.HistorialMedico;
+import db.model.Paciente;
+import db.service.AtiendeService;
+import db.service.DoctorService;
+=======
 import db.model.Habitacion;
 import db.model.HistorialMedico;
 import db.service.HabitacionService;
+>>>>>>> 1af123121c0fc2a27c033815bede3e9268f353b6
 import db.service.HistorialMedicoService;
+import db.service.PacienteService;
 
 import java.util.List;
 
 public class Main {
+
     public static void main(String[] args){
+        DoctorService doctorService = new DoctorService();
+        PacienteService pacienteService = new PacienteService();
+        AtiendeService atiendeService = new AtiendeService();
+
         HistorialMedico historialMedico = new HistorialMedico();
         historialMedico.setAlergias("Polen");
         historialMedico.setEnfermedades("Diabetes");
@@ -30,6 +45,37 @@ public class Main {
         System.out.println("TODOS LOS HistorialMedico PERSISTIDOS:");
         historialMedicoList.forEach(System.out::println);
 
+<<<<<<< HEAD
+        List<HistorialMedico> historialMedico1 = historialMedicoService.findDiabeticPeople("Diabetes");
+        historialMedico1.forEach(System.out::println);
+
+        Doctor doctor = new Doctor();
+        doctor.setNombre("Pedro");
+        doctor.setApellido("Jiménez");
+
+        doctorService.create(doctor);
+
+        Paciente paciente1 = new Paciente();
+        paciente1.setNombre("Mikel");
+        paciente1.setApellido("José");
+
+        Paciente paciente2 = new Paciente();
+        paciente2.setNombre("Abel");
+        paciente2.setApellido("Martínez");
+
+        pacienteService.create(paciente1);
+        pacienteService.create(paciente2);
+
+
+        Atiende atiende1 = new Atiende(paciente1, doctor);
+        Atiende atiende2 = new Atiende(paciente2, doctor);
+
+        doctor.getAtiende().add(atiende1);
+        doctor.getAtiende().add(atiende2);
+
+        doctorService.update(doctor);
+
+=======
         List<HistorialMedico> historialMedicoList1 = historialMedicoService.findDiabeticPeople("Diabetes");
         historialMedicoList1.forEach(System.out::println);
 
@@ -64,6 +110,7 @@ public class Main {
         List<Habitacion> habitacionList1 = habitacionService.findHabitacionesDisponibles();
         System.out.println("TODAS LAS HABITACIONES DISPONIBLES: ");
         habitacionList1.forEach(System.out::println);
+>>>>>>> 1af123121c0fc2a27c033815bede3e9268f353b6
 
     }
 }
