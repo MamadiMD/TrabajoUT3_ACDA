@@ -4,6 +4,7 @@ import db.service.*;
 
 import db.model.HistorialMedico;
 
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -120,5 +121,31 @@ public class Main {
         hospitalService.obtenerDoctoresHospital(hospital.getHospitalID());
         hospitalService.obtenerHabitacionesHospital(hospital.getHospitalID());
 
+
+        LicenciaProfesionalService licenciaService = new LicenciaProfesionalService();
+
+        LicenciaProfesional lic1 = new LicenciaProfesional();
+        lic1.setOrganismo("OMC");
+        lic1.setFechaEmision(new Date());
+        lic1.setFechaExpiracion(new Date());
+        licenciaService.create(lic1);
+
+        LicenciaProfesional lic2 = new LicenciaProfesional();
+        lic2.setOrganismo("OPS");
+        lic2.setFechaEmision(new Date());
+        lic2.setFechaExpiracion(new Date());
+        licenciaService.create(lic2);
+
+        LicenciaProfesional lic3 = new LicenciaProfesional();
+        lic3.setOrganismo("OMC");
+        lic3.setFechaEmision(new Date());
+        lic3.setFechaExpiracion(new Date());
+        licenciaService.create(lic3);
+
+        System.out.println("\n--- TODAS LAS LICENCIAS PROFESIONALES ---");
+        licenciaService.findAll().forEach(System.out::println);
+
+        System.out.println("\n--- LICENCIAS EMITIDAS POR LA OMC ---");
+        licenciaService.findOrganismoOMS().forEach(System.out::println);
     }
 }
