@@ -20,6 +20,18 @@ public class Doctor {
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.EAGER)
     private List<Atiende> atiende = new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hospitalID ", nullable = false)
+    private Hospital hospital;
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
     public int getDoctorID() {
         return doctorID;
     }
@@ -59,6 +71,7 @@ public class Doctor {
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", atiende=" + atiende +
+                ", hospital=" + hospital +
                 '}';
     }
 }

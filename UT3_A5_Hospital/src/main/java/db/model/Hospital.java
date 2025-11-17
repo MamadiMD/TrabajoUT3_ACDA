@@ -12,9 +12,9 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hospitalID;
 
-    @OneToMany(mappedBy = "hospital" , cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    List<Habitacion> habitaciones = new ArrayList<>();
-
+//    @OneToMany(mappedBy = "hospital" , cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    List<Habitacion> habitaciones = new ArrayList<>();
+//
 //    @OneToMany(mappedBy = "Doctor", cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
 //    List<Doctor>doctores = new ArrayList<>();
 
@@ -37,18 +37,18 @@ public class Hospital {
         this.hospitalID = hospitalID;
     }
 
-    public List<Habitacion> getHabitaciones() {
-        return habitaciones;
-    }
-
-    public void setHabitaciones(List<Habitacion> habitaciones) {
-        this.habitaciones = habitaciones;
-    }
-
+//    public List<Habitacion> getHabitaciones() {
+//        return habitaciones;
+//    }
+//
+//    public void setHabitaciones(List<Habitacion> habitaciones) {
+//        this.habitaciones = habitaciones;
+//    }
+//
 //    public List<Doctor> getDoctores() {
 //        return doctores;
 //    }
-
+//
 //    public void setDoctores(List<Doctor> doctores) {
 //        this.doctores = doctores;
 //    }
@@ -81,7 +81,6 @@ public class Hospital {
     public String toString() {
         return "Hospital{" +
                 "hospitalID=" + hospitalID +
-                ", habitaciones=" + habitaciones +
                 ", nombre='" + nombre + '\'' +
                 ", pais='" + pais + '\'' +
                 ", numCamas=" + numCamas +
