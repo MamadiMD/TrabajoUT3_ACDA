@@ -12,8 +12,8 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hospitalID;
 
-    @OneToMany(mappedBy = "Habitacion" , cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    List<Habitacion>habitaciones = new ArrayList<>();
+    @OneToMany(mappedBy = "hospital" , cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    List<Habitacion> habitaciones = new ArrayList<>();
 
 //    @OneToMany(mappedBy = "Doctor", cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
 //    List<Doctor>doctores = new ArrayList<>();

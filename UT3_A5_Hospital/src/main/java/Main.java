@@ -1,15 +1,15 @@
-<<<<<<< HEAD
+
 import db.model.Atiende;
 import db.model.Doctor;
 import db.model.HistorialMedico;
 import db.model.Paciente;
 import db.service.AtiendeService;
 import db.service.DoctorService;
-=======
+
 import db.model.Habitacion;
 import db.model.HistorialMedico;
 import db.service.HabitacionService;
->>>>>>> 1af123121c0fc2a27c033815bede3e9268f353b6
+
 import db.service.HistorialMedicoService;
 import db.service.PacienteService;
 
@@ -45,9 +45,9 @@ public class Main {
         System.out.println("TODOS LOS HistorialMedico PERSISTIDOS:");
         historialMedicoList.forEach(System.out::println);
 
-<<<<<<< HEAD
-        List<HistorialMedico> historialMedico1 = historialMedicoService.findDiabeticPeople("Diabetes");
-        historialMedico1.forEach(System.out::println);
+
+        List<HistorialMedico> ListHistorialMedico = historialMedicoService.findDiabeticPeople("Diabetes");
+        ListHistorialMedico.forEach(System.out::println);
 
         Doctor doctor = new Doctor();
         doctor.setNombre("Pedro");
@@ -75,7 +75,7 @@ public class Main {
 
         doctorService.update(doctor);
 
-=======
+
         List<HistorialMedico> historialMedicoList1 = historialMedicoService.findDiabeticPeople("Diabetes");
         historialMedicoList1.forEach(System.out::println);
 
@@ -110,7 +110,7 @@ public class Main {
         List<Habitacion> habitacionList1 = habitacionService.findHabitacionesDisponibles();
         System.out.println("TODAS LAS HABITACIONES DISPONIBLES: ");
         habitacionList1.forEach(System.out::println);
->>>>>>> 1af123121c0fc2a27c033815bede3e9268f353b6
+
 
     }
 }
