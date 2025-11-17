@@ -9,16 +9,16 @@ public class HistorialMedico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int historialMedicoID;
 
-    @Column(name = "alergias", nullable = false, length = 500, unique = false)
+    @Column(name = "alergias", nullable = true, length = 500, unique = false)
     private String alergias;
 
-    @Column(name = "medicamentos", nullable = false, length = 1000, unique = false)
+    @Column(name = "medicamentos", nullable = true, length = 1000, unique = false)
     private String medicamentos;
 
-    @Column(name = "enfermedades", nullable = false, length = 1000, unique = false)
+    @Column(name = "enfermedades", nullable = true, length = 1000, unique = false)
     private String enfermedades;
 
-    @Column(name = "vacunas", nullable = false, length = 1000, unique = false)
+    @Column(name = "vacunas", nullable = true, length = 1000, unique = false)
     private String vacunas;
 
     public int getHistorialMedicoID() {
