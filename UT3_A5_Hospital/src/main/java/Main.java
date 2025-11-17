@@ -1,4 +1,6 @@
+import db.model.Habitacion;
 import db.model.HistorialMedico;
+import db.service.HabitacionService;
 import db.service.HistorialMedicoService;
 
 import java.util.List;
@@ -21,5 +23,35 @@ public class Main {
 
         List<HistorialMedico> historialMedico1 = historialMedicoService.findDiabeticPeople("Diabetes");
         historialMedico1.forEach(System.out::println);
+
+        Habitacion habitacion1 = new Habitacion();
+        habitacion1.setNumero(120);
+        habitacion1.setDisponible(true);
+
+        System.out.println("Habitación ANTES de create:\n" + habitacion1);
+        HabitacionService habitacionService = new HabitacionService();
+        habitacionService.create(habitacion1);
+        System.out.println("Habitación DESPUÉS de create:\n" + habitacion1);
+
+        Habitacion habitacion2 = new Habitacion();
+        habitacion2.setNumero(120);
+        habitacion2.setDisponible(false);
+
+        Habitacion habitacion3 = new Habitacion();
+        habitacion3.setNumero(120);
+        habitacion3.setDisponible(true);
+
+        Habitacion habitacion4 = new Habitacion();
+        habitacion4.setNumero(120);
+        habitacion4.setDisponible(false);
+
+        List<Habitacion> habitacionList = habitacionService.findAll();
+        System.out.println("TODAS LAS HABITACIONES: ");
+        habitacionList.forEach(System.out::println);
+
+        List<Habitacion> habitacionList1 = habitacionService.findHabitacionesDisponibles();
+        System.out.println("TODAS LAS HABITACIONES DISPONIBLES: ");
+        habitacionList1.forEach(System.out::println);
+
     }
 }
