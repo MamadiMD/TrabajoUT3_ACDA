@@ -4,7 +4,6 @@ import db.service.*;
 
 import db.model.HistorialMedico;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -108,6 +107,14 @@ public class Main {
         List<Habitacion> habitacionList1 = habitacionService.findHabitacionesDisponibles();
         System.out.println("TODAS LAS HABITACIONES DISPONIBLES: ");
         habitacionList1.forEach(System.out::println);
+
+        List<Paciente> pacientes = doctorService.getPacientesPorDoctor(doctor.getDoctorID());
+        System.out.println("LISTADO DE PACIENTES POR DOCTOR");
+        pacientes.forEach(System.out::println);
+
+        List<Doctor> doctores = pacienteService.getDoctoresPorPaciente(paciente1.getPacienteID());
+        System.out.println("LISTADO DE DOCTORES POR PACIENTE");
+        doctores.forEach(System.out::println);
 
 
         hospitalService.obtenerDoctoresHospital(hospital.getHospitalID());
