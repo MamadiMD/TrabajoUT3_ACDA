@@ -14,9 +14,9 @@ public class LicenciaProfesionalDAO extends GenericDAOImpl<LicenciaProfesional, 
     public List<LicenciaProfesional> findOrganismoOMC() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 
-            String hql = "FROM Habitacion WHERE disponible = :estadoDisponible";
+            String hql = "FROM LicenciaProfesional WHERE organismo = :org";
             Query<LicenciaProfesional> query = session.createQuery(hql, LicenciaProfesional.class);
-            query.setParameter("estadoDisponible", true);
+            query.setParameter("org", "OMC");
 
             return query.getResultList();
         }

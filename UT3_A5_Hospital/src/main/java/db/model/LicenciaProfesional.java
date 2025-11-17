@@ -57,6 +57,8 @@ public class LicenciaProfesional {
     public void setOrganismo(String organismo) {
         this.organismo = organismo;
     }
+    public LicenciaProfesional() {}
+
 
     @Override
     public String toString() {
