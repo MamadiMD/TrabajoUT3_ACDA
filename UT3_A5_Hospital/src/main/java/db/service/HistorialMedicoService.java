@@ -11,9 +11,9 @@ public class HistorialMedicoService extends GenericServiceImpl<HistorialMedico,I
         super(new HistorialMedicoDAO());
     }
 
-    public List<HistorialMedico> findDiabeticPeople(String enfermedad) {
+    public List<HistorialMedico> findDiabeticPeople(String enfermedades) {
         HistorialMedicoDAO dao = (HistorialMedicoDAO) getDao();
-        return dao.findDiabeticPeople(enfermedad);
+        return dao.findDiabeticPeople(enfermedades);
     }
 
 }

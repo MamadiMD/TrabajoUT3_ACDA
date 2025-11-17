@@ -12,11 +12,11 @@ public class HistorialMedicoDAO extends GenericDAOImpl<HistorialMedico, Integer>
         super(HistorialMedico.class);
     }
 
-    public List<HistorialMedico> findDiabeticPeople(String enfermedad) {
+    public List<HistorialMedico> findDiabeticPeople(String enfermedades) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "FROM HistorialMedico WHERE enfermedad  LIKE :enfermedad";
+            String hql = "FROM HistorialMedico WHERE enfermedades  LIKE :enfermedades";
             Query<HistorialMedico> query = session.createQuery(hql, HistorialMedico.class);
-            query.setParameter("enfermedad","%"+ enfermedad+"%");
+            query.setParameter("enfermedades","%"+ enfermedades+"%");
             return query.getResultList();
         }
     }
