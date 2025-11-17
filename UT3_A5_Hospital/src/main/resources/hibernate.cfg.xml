@@ -12,5 +12,8 @@
         <mapping class="db.model.HistorialMedico"/>
         <mapping class="db.model.LicenciaProfesional"/>
         <mapping class="db.model.Hospital"/>
+        <mapping class="db.model.Doctor"/>
+        <mapping class="db.model.Paciente"/>
+        <mapping class="db.model.Atiende"/>
     </session-factory>
 </hibernate-configuration>
